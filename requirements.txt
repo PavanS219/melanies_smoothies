@@ -1,0 +1,31 @@
+definition_version: 2
+entities:
+  streamlit_app:
+    type: streamlit
+    meta:
+      use_mixins:
+        - streamlit_shared
+    identifier:
+      name: V5QRCTXOFFD1ZXVU
+      database: SMOOTHIES
+      schema: PUBLIC
+  Target 1:
+    type: streamlit
+    meta:
+      use_mixins:
+        - streamlit_shared
+      role: SYSADMIN
+    identifier:
+      name: ''
+      database: SMOOTHIES
+      schema: PUBLIC
+mixins:
+  streamlit_shared:
+    artifacts:
+      - pyproject.toml
+      - streamlit_app.py
+      - .streamlit/config.toml
+    title: Custom Smoothie Order Form
+    query_warehouse: COMPUTE_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    main_file: streamlit_app.py
