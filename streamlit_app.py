@@ -34,7 +34,7 @@ if my_ingredients:
         st.write('The search value for ', fruit_chosen, ' is ', search_on, '.')
 
         st.subheader(fruit_chosen + ' Nutrition Information')
-        smoothieroot_response = requests.get("https://my.smoothieroot.com/api/fruit/" + search_on)
+        smoothieroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/" + search_on)
         sf_df = st.dataframe(data=smoothieroot_response.json(), use_container_width=True)
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients, name_on_order)
